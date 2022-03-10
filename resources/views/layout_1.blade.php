@@ -28,6 +28,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="{{asset('public/frontend/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
 	<!-- font-awesome-icons -->
 	<link href="{{asset('public/frontend/css/font-awesome.css')}}" rel="stylesheet">
+	<link href="{{asset('public/frontend/css/checkout.css')}}" rel="stylesheet">
+	<link href="{{asset('public/frontend/css/contact.css')}}" rel="stylesheet">
+	<link href="{{asset('public/frontend/css/creditly.css')}}" rel="stylesheet">
+	<link href="{{asset('public/frontend/css/about.css')}}" rel="stylesheet">
 	<!-- //font-awesome-icons -->
 	<link href="{{asset('public/frontend///fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800')}}"
 	    rel="stylesheet">
@@ -86,17 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- //search -->
 		<div class="clearfix"></div>
 		<!-- /banner_inner -->
-		<div class="services-breadcrumb_w3ls_agileinfo">
-			<div class="inner_breadcrumb_agileits_w3">
 
-				<ul class="short">
-					<li><a href="{{URL::to('/trangchu')}}">Trang chủ</a><i>|</i></li>
-					<li>Chi tiết sản phẩm</li>
-				</ul>
-			</div>
-		</div>
-		<!-- //banner_inner -->
-	</div>
     @yield('content')
 	<!-- footer -->
 	<div class="footer_agileinfo_w3">
@@ -270,6 +264,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!-- //end-smoth-scrolling -->
 	<script type="text/javascript" src="{{asset('public/frontend/js/bootstrap-3.1.1.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('public/frontend/js/creditly.js')}}"></script>
+	<script type="text/javascript" src="{{asset('public/frontend/js/minicart.js')}}"></script>
+	<script type="text/javascript" src="{{asset('public/frontend/js/jquery.flexslider.js')}}"></script>
 
 
 </body>

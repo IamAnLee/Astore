@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryProduct;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,9 @@ Route::get('/danh_muc/{category_id}','ShopController@show_cate');
 Route::get('/thuong_hieu/{brand_id}','ShopController@show_brand');
 //chi_tiet_san_pham
 Route::get('/chi_tiet_san_pham/{product_id}/{category_id}/{brand_id}','TransactionController@detail_product');
+//cart
+Route::post('/them_gio_hang','TransactionController@cart');
+Route::post('/gio_hang','TransactionController@show_cart');
 
 //backen
 

@@ -1,5 +1,14 @@
 @extends('layout_1')
 @section('content')
+    <div class="services-breadcrumb_w3ls_agileinfo">
+        <div class="inner_breadcrumb_agileits_w3">
+            <ul class="short">
+                <li><a href="{{URL::to('/trangchu')}}">Trang chủ</a><i>|</i></li>
+                <li>Chi tiết sản phẩm</li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div class="ads-grid_shop">
     <div class="shop_inner_inf">
         @foreach ($get_product_by_id as $key =>$items )
@@ -31,22 +40,6 @@
             </p>
             <p><span class="item">Tình trạng:</span>
             </p>
-            <p><span class="item">
-                <label>Số lượng</label>
-                <input type="number" min="1" value="1" style="width:2.5em">
-            </span>
-            </p>
-
-
-            {{-- <div class="rating1">
-                <ul class="stars">
-                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-                </ul>
-            </div> --}}
             <div class="description">
                 <h5>{{$items->product_content }}</h5>
             </div>
@@ -64,13 +57,14 @@
             <div class="occasion-cart">
                 <div class="shoe single-item single_page_b">
                     <form action="{{URL::to('/gio_hang')}}" method="post">
-                        <input type="hidden" name="quantity" value="_cart">
-                        <input type="hidden" name="add" value="1">
-                        <input type="hidden" name="shoe_item" value="Chikku Loafers">
-                        <input type="hidden" name="amount" value="405.00">
+                        {{ csrf_field() }}
+                        <p><span class="item">
+                            <label>Số lượng</label>
+                            <input name="qty"  type="number" min="1" value="1" style="width:2.5em">
+                        </span>
+                        </p>
+                        <input type="hidden" name="product_id" value="{{$items->product_id}}">
                         <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button add">
-
-                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
                     </form>
 
                 </div>
