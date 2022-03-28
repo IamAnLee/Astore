@@ -5,7 +5,7 @@
 
             <ul class="short">
                 <li><a href="{{URL::to ('/trangchu')}}">Trang chủ</a><i>|</i></li>
-                <li><a href="{{URL::to ('/shop')}}">Cửa hàng</a></li>
+                <li><a href="{{URL::to ('/shop')}}">Xem đơn hàng</a></li>
             </ul>
         </div>
     </div>
@@ -17,7 +17,7 @@
 <div class="ads-grid_shop">
     <div class="shop_inner_inf">
         <div class="privacy about">
-            <h3><span>Giỏ hàng</span></h3>
+            <h3><span>Đơn hàng</span></h3>
 
             <div class="checkout-right">
                 {{-- <h4>Your shopping cart contains: <span>3 Products</span></h4> --}}
@@ -56,9 +56,7 @@
                                 ?></td>
                             <td class="invert">
                                 <div class="rem">
-                                    <a href="{{URL::to('/xoa_san_pham/'.$items->rowId)}}">
-                                    <div class="close1"> </div>
-                                    </a>
+                                    <p>Đang chuẩn bị hàng</p>
                                 </div>
                             </td>
                         </tr>
@@ -87,7 +85,7 @@
                         <li>Thành tiền<span>{{Cart::total(0).''.'VNĐ'}}</span></li>
 
                     </ul>
-                    <a href="{{URL::to('/yeu_cau_dang_nhap')}}"><h4>Thanh toán</h4></a>
+                    <a href="{{URL::to('/yeu_cau_thanh_toan')}}"><h4>Thanh toán</h4></a>
                 </div>
 
                 <div class="clearfix"> </div>

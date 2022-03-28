@@ -47,6 +47,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href="{{URL::to('/trangchu')}}" class="active">Trang chủ</a></li>
 							<li><a href="{{URL::to('/about')}}">Giới thiệu</a></li>
 							<li><a href="{{URL::to('/shop')}}">Cửa hàng</a></li>
+                            <li><a href="{{URL::to('/gio_hang')}}">Giỏ hàng</a></li>
+                            <?php
+                             $data= Session::get('customer_id');
+                             if($data!=NULL){
+                            ?>
+
+                            <li><a href="{{URL::to('/thanh_toan_gio_hang')}}">Thanh toán</a></li>
+                            <li><a href="{{URL::to('/logout')}}">Đăng xuất</a></li>
+                            <?php }else{
+                            ?>
+                            <li><a href="{{URL::to('/yeu_cau_dang_nhap')}}">Thanh toán</a></li>
+							<li><a href="{{URL::to('/yeu_cau_dang_nhap')}}">Đăng nhập</a></li>
+                            <?php } ?>
+
 							<li><a href="contact.html">Liên hệ</a></li>
 						</ul>
 					</nav>

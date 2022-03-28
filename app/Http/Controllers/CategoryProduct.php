@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-
+session_start();
 class CategoryProduct extends Controller
 {
     public function AuthLogin(){
@@ -77,5 +77,5 @@ class CategoryProduct extends Controller
         return Redirect::to('all_category_product');
     }
     //End_admin
-    
+
 }

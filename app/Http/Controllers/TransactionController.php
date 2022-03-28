@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use Database;
 use Session;
-use Cart;
+// use Cart;
 use Illuminate\Support\Facades\DB;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 use Illuminate\Support\Facades\Redirect;
 
@@ -34,20 +35,31 @@ class TransactionController extends Controller
         $quantity = $request->qty;
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand_product')->orderby('brand_id','desc')->get();
-        $product_info = DB::table('tbl_product')->where('product_id',$product_id)->get();
+        $product_info = DB::table('tbl_product')->where('product_id',$product_id)->first();
         $data['id'] = $product_id;
         $data['qty'] = $quantity;
         $data['name'] = $product_info->product_name;
         $data['price'] = $product_info->product_price;
         $data['weight'] = '1';
-        $data['option']['image'] = $product_info->product_images;
+        $data['options']['image'] = $product_info->product_images;
         Cart::add($data);
-        // Cart::add('293ad', 'Product 1', 1, 9.99, 550);
-        return Redirect::to('/show_cart');
+        Cart::setGlobalTax(5);
+        // Cart::Destroy();
+        return Redirect::to('/gio_hang');
     }
     public function show_cart(){
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand_product')->orderby('brand_id','desc')->get();
         return view ('pages.cart.cart')->with('cate',$cate_product)->with('brand',$brand_product);
+    }
+    public function delete_cart($rowId){
+        Cart::update($rowId,0);
+        return Redirect::to('/gio_hang');
+    }
+    public function update_cart(Request $request){
+        $rowId = $request->rowId;
+        $qty = $request->qty_pro;
+        Cart::update($rowId,$qty);
+        return Redirect::to('/gio_hang');
     }
 }

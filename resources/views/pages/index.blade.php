@@ -17,6 +17,19 @@
 							<li><a href="{{URL::to('/trangchu')}}" class="active">Trang chủ</a></li>
 							<li><a href="{{URL::to('/about')}}">Tin tức</a></li>
 							<li><a href="{{URL::to('/shop')}}">Cửa hàng</a></li>
+							<li><a href="{{URL::to('/gio_hang')}}">Giỏ hàng</a></li>
+                            <?php
+                             $data= Session::get('customer_id');
+                             if($data!=NULL){
+                            ?>
+                            <li><a href="{{URL::to('/thanh_toan_gio_hang')}}">Thanh toán</a></li>
+                            <li><a href="{{URL::to('/logout')}}">Đăng xuất</a></li>
+                            <?php }else{
+                            ?>
+                            <li><a href="{{URL::to('/yeu_cau_dang_nhap')}}">Thanh toán</a></li>
+							<li><a href="{{URL::to('/yeu_cau_dang_nhap')}}">Đăng nhập</a></li>
+                            <?php } ?>
+
 							<li><a href="contact.html">Liên hệ</a></li>
 						</ul>
 					</nav>
@@ -25,16 +38,6 @@
 					<button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
 				</div>
 				<!-- cart details -->
-				<div class="top_nav_right">
-					<div class="shoecart shoecart2 cart cart box_1">
-						<form action="#" method="post" class="last">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="display" value="1">
-							<button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-						</form>
-					</div>
-
-				</div>
 				<!-- //cart details -->
 				<!-- search -->
 				<div class="search_w3ls_agileinfo">
@@ -256,7 +259,7 @@
 	<!-- //nav -->
 	<!-- cart-js -->
 	<script src="{{ asset('public/frontend/js/minicart.js')}}"></script>
-	<script>
+	{{-- <script>
 		shoe.render();
 
 		shoe.cart.on('shoe_checkout', function (evt) {
@@ -268,7 +271,7 @@
 				for (i = 0, len = items.length; i < len; i++) {}
 			}
 		});
-	</script>
+	</script> --}}
 	<!-- //cart-js -->
 	<!--search-bar-->
 	<script src="{{ asset('public/frontend/js/search.js')}}"></script>

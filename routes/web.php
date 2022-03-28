@@ -26,8 +26,16 @@ Route::get('/thuong_hieu/{brand_id}','ShopController@show_brand');
 Route::get('/chi_tiet_san_pham/{product_id}/{category_id}/{brand_id}','TransactionController@detail_product');
 //cart
 Route::post('/them_gio_hang','TransactionController@cart');
-Route::post('/gio_hang','TransactionController@show_cart');
+Route::get('/gio_hang','TransactionController@show_cart');
+Route::get('/xoa_san_pham/{rowId}','TransactionController@delete_cart');
+Route::post('/cap_nhat_gio_hang','TransactionController@update_cart');
+//check-out
 
+Route::get('/yeu_cau_dang_nhap','CheckoutController@check_out');
+Route::get('/dang_ky','CheckoutController@add_customer');
+Route::post('/address','CheckoutController@add_address');
+Route::get('/thanh_toan_gio_hang','CheckoutController@payment');
+Route::get('/cash_on_delevery','CheckoutController@cash_delevery');
 //backen
 
 Route::get('/admin','AdminController@index');

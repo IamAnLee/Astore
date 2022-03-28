@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Redirect;
-
+session_start();
 class HomeController extends Controller
 {
     public function index() {

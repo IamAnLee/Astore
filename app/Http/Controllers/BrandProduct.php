@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-
+session_start();
 class BrandProduct extends Controller
 {
     public function add_brand_product(){

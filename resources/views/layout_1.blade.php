@@ -36,6 +36,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="{{asset('public/frontend///fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800')}}"
 	    rel="stylesheet">
 	<link href="{{asset('public/frontend///fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet')}}">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+	<link rel="stylesheet" href="{{asset('public/frontend/css/login.css')}}">
 </head>
 
 <body>
@@ -54,6 +57,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href="{{URL::to('/trangchu')}}" class="active">Trang chủ</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="{{URL::to('/shop')}}">Cửa hàng</a></li>
+                            <li><a href="{{URL::to('/gio_hang')}}">Giỏ hàng</a></li>
+                            <?php
+                             $data= Session::get('customer_id');
+                             if($data!=NULL){
+                            ?>
+
+                            <li><a href="{{URL::to('/thanh_toan_gio_hang')}}">Thanh toán</a></li>
+                            <li><a href="{{URL::to('/logout')}}">Đăng xuất</a></li>
+                            <?php}else{
+                            ?>
+                            <li><a href="{{URL::to('/yeu_cau_dang_nhap')}}">Thanh toán</a></li>
+							<li><a href="{{URL::to('/yeu_cau_dang_nhap')}}">Đăng nhập</a></li>
+                            <?php } ?>
 							<li><a href="contact.html">Liên hệ</a></li>
 						</ul>
 					</nav>
@@ -67,7 +83,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<form action="#" method="post" class="last">
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="display" value="1">
-							<button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+							<a class="top_shoe_cart" href=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a>
 						</form>
 					</div>
 				</div>

@@ -56,7 +56,7 @@
             </div> --}}
             <div class="occasion-cart">
                 <div class="shoe single-item single_page_b">
-                    <form action="{{URL::to('/gio_hang')}}" method="post">
+                    <form action="{{URL::to('/them_gio_hang')}}" method="post">
                         {{ csrf_field() }}
                         <p><span class="item">
                             <label>Số lượng</label>
